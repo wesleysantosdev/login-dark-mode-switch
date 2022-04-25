@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background-color-dark: #3A3737;
+    --contrast-color-light-mode: #EA4C88;
+    --contrast-color-dark-mode: #55df67;
+}
+body{
+   background-color:white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   min-width: 100vw;
+   font-family: 'Poppins', sans-serif;
+   transition: background 0.2s linear;
+}
+
+body.dark{
+    background-color: var(--background-color-dark);
+}
+
+body.dark .login-title{
+    color: white;
+}
+
+body.dark input::placeholder{
+    color: #696969;
+}
+
+body.dark input[type="email"]:hover,
+body.dark input[type="email"]:focus,
+body.dark input[type="password"]:hover,
+body.dark input[type="password"]:focus{
+    background-color: #414040;
+}
+
+body.dark input[type="submit"]:hover{
+    background-color: #4ec75e;
+}
+
+body.dark input[type="email"],
+body.dark input[type="password"]{
+    background-color: #3a3b3b;
+    color: rgba(189, 189, 189, 0.979);
+    transition: background-color 0.3s;  
+}
+
+body.dark input[type="submit"]{
+    background-color: var(--contrast-color-dark-mode);
+    color:white;
+    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+}
+
+body.dark p{
+    color: white;
+}
+
+body.dark a{
+    color: var(--contrast-color-dark-mode);
+}
+
+body.dark .label{
+    background-color: var(--contrast-color-dark-mode);
+}
+
+body.dark .circle{
+   background-color:white;
+}
+
+main.container{
+   max-width: 300px;
+   padding: 30px;
+}
+
+h1.login-title{
+    margin-bottom: 55px;
+    text-align: center;
+    color: var(--contrast-color-light-mode);
+}
+
+input{
+    box-shadow: 0 0 0 0;
+    border: 1px solid rgb(0, 0, 0);
+} 
+
+input[type="email"]{
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.555);
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 0.7em;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.123);
+}
+
+input[type="password"]{
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.555);
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 0.7em;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.123);
+}
+
+input[type="submit"]{
+    width: 100%;
+    padding: 1.2em;
+    color: white;
+    background-color:var(--contrast-color-light-mode);
+    border: 0px;
+    cursor: pointer;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover{
+    background-color: #dd4881;
+    letter-spacing: 0.5px;
+}
+
+input::placeholder{
+    color: rgba(0, 0, 0, 0.459);
+    font-style: italic;
+}
+
+footer p{
+   margin-top: 10px;
+   font-size: 0.8em;
+}
+
+footer a{
+    text-decoration: none;
+    color:var(--contrast-color-light-mode);
+}
+
+/*hidding the checkbox*/
+#checkbox{
+    opacity: 0;
+    position: absolute;
+}
+
+
+
+/*using the div to justify the button in the center*/
+.toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*toggle button design*/
+.label{
+    background-color: var(--contrast-color-light-mode);
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    border-radius: 50px;
+    height: 30px;
+    width: 55px;
+    margin-top: 20px;
+    transform: scale(0.9);
+}
+
+.circle{
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  transition: all 320ms ease-in-out;
+}
+
+/*Whenever the checkbox is "checked", this animation will be set. the "+" sign, indicates that we are targeting the label and circle. */
+#checkbox:checked + .label .circle{
+    transform: translateX(-100%);
+    /*got this dimensions from Kaio Almeida https://codepen.io/KaioRocha/pen/MdvWmg*/
+    left: calc(100% - 5px);   
+}
+
+

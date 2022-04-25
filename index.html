@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/eclipse-icon.png" type="image/png">
+    <title>Login Form with Dark Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1 class="login-title">Login</h1>
+        <form action="">
+            <!--I had autocomplete set to off here because I didn't figure out yet, how to change its input background, when you select an email to complete-->
+            <input autocomplete="off"class="login-email " type="email" name="email" placeholder="Email">
+            <input autocomplete="off"class="login-password" type="password" name="password" placeholder="Password"> 
+            <input type="submit" value="SIGN IN">
+        </form>
+     <footer>
+        <p>Not registered? <a href="#">Create an account</a></p>
+        <div class="toggle">
+            <!--This will div is for the toggle button, and it'll make sure that whenever we click on the label, it will be as if we were clicking on the checkbox, because of the id="checkbox"-->
+            <input id="checkbox"type="checkbox" name="checkbox"><label for="checkbox" class="label"><div class="circle"></div></label>
+        </div>
+     </footer>
+    </main>  
+    <script src="script.js"></script>
+</body>
+</html> 
