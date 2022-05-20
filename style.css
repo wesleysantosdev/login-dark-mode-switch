@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200&display=swap');
 
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 :root{
     --background-color-dark: #3A3737;
-    --contrast-color-light-mode: #EA4C88;
+    --color-gray: #696969;
     --contrast-color-dark-mode: #55df67;
+    --contrast-color-light-mode: #EA4C88;
 }
+
 body{
-   background-color:white;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   min-height: 100vh;
-   min-width: 100vw;
-   font-family: 'Poppins', sans-serif;
-   transition: background 0.2s linear;
+    align-items: center;
+    background-color:white;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    min-height: 100vh;
+    transition: 0.3s linear;
 }
 
 body.dark{
@@ -31,7 +32,7 @@ body.dark .login-title{
 }
 
 body.dark input::placeholder{
-    color: #696969;
+    color:var(--color-gray)
 }
 
 body.dark input[type="email"]:hover,
@@ -49,14 +50,13 @@ body.dark input[type="email"],
 body.dark input[type="password"]{
     background-color: #3a3b3b;
     color: rgba(189, 189, 189, 0.979);
-    transition: background-color 0.3s;  
+    transition: all .3s ease;  
 }
 
 body.dark input[type="submit"]{
     background-color: var(--contrast-color-dark-mode);
     color:white;
-    transition: background-color 0.3s;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
 
 body.dark p{
@@ -72,79 +72,63 @@ body.dark .label{
 }
 
 body.dark .circle{
-   background-color:white;
+    background-color: white;
 }
 
-main.container{
-   max-width: 300px;
-   padding: 30px;
+.container{
+    max-width: 350px;
+    padding: 30px;
 }
 
-h1.login-title{
+.login-title{
+    color: var(--contrast-color-light-mode);
     margin-bottom: 55px;
     text-align: center;
-    color: var(--contrast-color-light-mode);
 }
 
-input{
-    box-shadow: 0 0 0 0;
-    border: 1px solid rgb(0, 0, 0);
-} 
-
-input[type="email"]{
-    font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.555);
-    width: 100%;
-    padding: 13px;
-    margin-bottom: 0.7em;
-    outline: none;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.123);
-}
-
+input[type="email"],
 input[type="password"]{
-    font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.555);
-    width: 100%;
-    padding: 13px;
-    margin-bottom: 0.7em;
-    outline: none;
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.123);
+    color: rgba(0, 0, 0, 0.555);
+    font-size: 0.9em;
+    margin-bottom: 0.7em;
+    outline: none;
+    padding: 13px;
+    width: 100%;
 }
 
 input[type="submit"]{
-    width: 100%;
-    padding: 1.2em;
-    color: white;
     background-color:var(--contrast-color-light-mode);
-    border: 0px;
-    cursor: pointer;
-    font-size: 0.75em;
-    font-weight: 600;
     border-radius: 4px;
-    transition: background-color 0.3s;
-    transition: all 0.3s ease;
+    border: 0px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    padding: 0.9rem;
+    transition: all .3s ease;
+    width: 100%;
 }
 
 input[type="submit"]:hover{
-    background-color: #dd4881;
-    letter-spacing: 0.5px;
+    background-color: #d1477c;
 }
 
 input::placeholder{
     color: rgba(0, 0, 0, 0.459);
-    font-style: italic;
 }
 
 footer p{
-   margin-top: 10px;
-   font-size: 0.8em;
+    color:var(--color-gray);
+    font-size: 0.85em;
+    margin-top: 10px;
+    text-align: center;
 }
 
 footer a{
-    text-decoration: none;
     color:var(--contrast-color-light-mode);
+    text-decoration: none;
 }
 
 /*hidding the checkbox*/
@@ -153,44 +137,42 @@ footer a{
     position: absolute;
 }
 
-
-
 /*using the div to justify the button in the center*/
 .toggle{
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 /*toggle button design*/
 .label{
     background-color: var(--contrast-color-light-mode);
+    border-radius: 50px;
     cursor: pointer;
     display: flex;
-    position: relative;
-    border-radius: 50px;
     height: 30px;
-    width: 55px;
     margin-top: 20px;
+    position: relative;
     transform: scale(0.9);
+    width: 55px;
 }
 
 .circle{
   background-color: white;
-  width: 20px;
-  height: 20px;
   border-radius: 50%;
+  height: 20px;
+  left: 4px;
   position: absolute;
   top: 5px;
-  left: 4px;
   transition: all 320ms ease-in-out;
+  width: 20px;
 }
 
 /*Whenever the checkbox is "checked", this animation will be set. the "+" sign, indicates that we are targeting the label and circle. */
 #checkbox:checked + .label .circle{
-    transform: translateX(-100%);
     /*got this dimensions from Kaio Almeida https://codepen.io/KaioRocha/pen/MdvWmg*/
     left: calc(100% - 5px);   
+    transform: translateX(-100%);
 }
 
 
